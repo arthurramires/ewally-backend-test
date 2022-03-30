@@ -1,0 +1,65 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Ewally API",
+        "description": "An API to validate barcodes"
+    },
+    "servers": [
+        {
+            "description": "Dev Server",
+            "url": "http://localhost:8080/api"
+        }
+    ],
+    "paths": {
+        "/:barcode": {
+            "get": {
+                "description": "Get info and validate the barcode",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Barcode"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "parameters": [
+                {
+                    "name": "barcode",
+                    "in": "path"
+                }
+            ]
+        }
+    },
+    "components": {
+        "schemas": {
+            "Barcode": {
+                "type": "object",
+                "required": ["barCode", "amount", "expirationDate"],
+                "properties": {
+                    "status": {
+                        "type": "number",
+                        "example": "200"
+                    },
+                    "barCode": {
+                        "type": "string",
+                        "example": "21299758700000020000001121100012100447561740"
+                    },
+                    "amount": {
+                        "type": "string",
+                        "example": "20.00"
+                    },
+                    "expirationDate": {
+                        "type": "string",
+                        "example": "2022-02-30"
+                    }
+                }
+            }
+        }
+    }
+}
