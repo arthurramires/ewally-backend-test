@@ -12,7 +12,7 @@
         }
     ],
     "paths": {
-        "/:barcode": {
+        "/{barcode}": {
             "get": {
                 "description": "Get info and validate the barcode",
                 "responses": {

@@ -1,6 +1,3 @@
-export {
-    AppError,
-    NotFoundError,
-    ValidButNotFoundError,
-    InvalidBarcodeError
-} from './custom-errors';
+export { AppError, NotFoundError, InvalidBarcodeError } from './custom-errors';
+
+export { valTitBancario, valTitArrecadacao } from './boleto-validator';
