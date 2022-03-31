@@ -9,12 +9,9 @@ const server = createServer(app);
 server.listen(port, () => console.log('Listening on port ' + port));
 
 process.on('SIGINT', () => {
-    console.log('SIGINT received ...');
-    console.log('Shutting down the server');
-
     server.close(() => {
-        console.log('Server has been shutdown');
-        console.log('Exiting process ...');
         process.exit(0);
     });
 });
+
+module.exports = server;

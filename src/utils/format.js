@@ -1,6 +1,7 @@
 function cleanDigitableLine(line) {
     line = line.replace(/( |-)/g, '');
-    return line.replaceAll('.', '');
+    let newstring = line.split('.').join('');
+    return newstring;
 }
 
 module.exports = {
